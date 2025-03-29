@@ -1,0 +1,221 @@
+body {
+    padding-top: 20px;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+
+}.text-primary {
+    color: #14703d !important;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.2s;
+    position: relative;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    border-radius: 12px; /* Soft rounded corners */
+    overflow: hidden; /* Hides the parts of the icon that go outside the card */
+    border: none; /* Remove default border */
+
+
+}
+
+/* Add Task Button */
+.btn-success {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-success i {
+    font-size: 20px;
+}
+
+.btn-success:hover {
+    background-color: #0e5c2f;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Card Header (Title & Button) */
+.card-body h4 {
+    font-weight: bold;
+    color: #333;
+}
+/* Card Header */
+.card-header {
+    background:linear-gradient(135deg, #030303, #de4857);
+    color: #fff;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+.btn-primary:active {
+    background: #084a22; /* Background color when clicked */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+.task-card {
+    margin-bottom: 20px;
+}
+
+.form-control, .form-select {
+    margin-bottom: 15px;
+}
+.btn-link {
+    cursor: pointer;
+}
+.badge {
+    font-size: 0.9rem;
+}
+.btn-primary {
+    background: #0d7838; /* New default background color */
+    transition: background 0.3s ease; /* Smooth transition */
+    border: none; /* Optional: Removes the border */
+    color: white; /* Text color */
+}
+/* Form Select Boxes */
+.form-select {
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+/* When hovering over the select dropdowns */
+.form-select:hover {
+    background-color: #f8f9fa;
+}
+
+/* When the select box is focused */
+.form-select:focus {
+    border-color: #198754; /* Green border when active */
+    box-shadow: 0 0 6px rgba(25, 135, 84, 0.5);
+}
+/* Hover state */
+.btn-primary:hover {
+    background: #1f9e55; /* New background color when hovered */
+}
+
+/* Active state */
+.btn-primary:active {
+    background: #14703d; /* New background color when clicked */
+}
+
+:not(.btn-check)+.btn:active{
+    background: #14703d; /* New background color when clicked */
+
+}
+
+.card-icon {
+    font-size: 110px; /* Icon size */
+    position: absolute;
+    transform: rotate(-25deg); /* Rotates the icon */
+    
+    bottom: -40px;  /* Moves the icon down */
+    right: -4px;    /* Moves the icon to the right */
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent color */
+    transition: transform 0.3s ease-in-out;
+}
+
+.summary-card:hover .card-icon {
+    transform: rotate(-20deg) translateY(-31px); /* Keeps rotation & moves up on hover */
+    color: rgba(255, 255, 255, 1); /* Makes the icon fully visible */
+}
+/* Responsive Layout Tweaks */
+@media (max-width: 768px) {
+    .d-flex.gap-2 {
+        flex-direction: column;
+    }
+    
+    .col-6 {
+        width: 100%; /* Make selects full-width on small screens */
+    }
+}
+/* ======= Modal Custom Styling ======= */
+.modal-content {
+    border-radius: 12px; /* Soft rounded edges */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adds depth */
+    border: none; /* Removes default border */
+}
+
+/* Modal Header */
+.modal-header {
+    background-color: #14703d; /* Bootstrap primary blue */
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+/* Close button */
+.btn-close {
+    filter: invert(1); /* Makes the close button white */
+}
+
+/* Modal Form Fields */
+.form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #14703d;
+    box-shadow: 0 0 6px rgba(0, 159, 37, 0.4);
+}
+
+/* Modal Footer */
+.modal-footer {
+    background-color: #f8f9fa;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #14703d;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+.img-fluid{
+    BACKGROUND-COLOR: #b7b7b7;
+    PADDING: 12px;
+    border-radius: 137PX 61px 165px 27PX;
+
+}
+.btn-primary:hover {
+    background-color: #14703d;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    border-radius: 8px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 576px) {
+    .modal-dialog {
+        max-width: 90%;
+    }
+}

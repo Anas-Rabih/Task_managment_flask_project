@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<style>
+
+/* Centering the form */
+.row.justify-content-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.card-header {
+    background: linear-gradient(135deg, #252525, #00a53a);
+
+}
+.btn-primary:active {
+    background: #084a22; /* Background color when clicked */
+}
+
+.form-control:focus {
+    border-color: #006729;
+    box-shadow: 0 0 3px #006729;
+}
+
+/* Remember Me Checkbox */
+.form-check-input:checked {
+    background-color: #006729;
+    border-color: #006729;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    border-color: #006729;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+    background: #0d7838;
+}
+.btn-primary:hover {
+    border-color: #006729;
+
+    background: #006729;
+    transform: scale(1.05);
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: #00632e;
+    font-weight: 600;
+    text-decoration: underline;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+</style>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Login</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" novalidate>
+                    {{ form.hidden_tag() }}  <!-- CSRF token here -->
+                    
+                    <div class="mb-3">
+                        {{ form.username.label(class="form-label") }}
+                        {{ form.username(class="form-control" + (' is-invalid' if form.username.errors else '')) }}
+                        {% for error in form.username.errors %}
+                        <div class="invalid-feedback">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form.password.label(class="form-label") }}
+                        {{ form.password(class="form-control" + (' is-invalid' if form.password.errors else '')) }}
+                        {% for error in form.password.errors %}
+                        <div class="invalid-feedback">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        {{ form.remember(class="form-check-input") }}
+                        {{ form.remember.label(class="form-check-label") }}
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <div class="mt-3">
+                    Don't have an account? <a href="{{ url_for('auth.register') }}">Register here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
